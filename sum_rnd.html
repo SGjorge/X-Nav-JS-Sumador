@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+   <head>
+     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+     <style type="text/css" media="screen">
+       body{
+         padding:0;
+         margin:50px auto;
+         text-align:center;
+         font:100% Verdana;
+       }
+       h1 {
+         font-size: 1.5em;
+       }
+       #sentence {
+         font-size: 4em;
+       }
+       #another {
+         font-size: 2em;
+       }
+     </style>
+     <script type="text/javascript" charset="utf-8">
+       function suma(){
+         var add = document.getElementById('op');
+         var nums = add.innerHTML.split("+");
+         var res = document.getElementById('res');
+         var r = parseInt(nums[0]) + parseInt(nums[1]);
+         res.innerHTML = r;
+       };
+     </script>
+     <title>Stupid sentences generator</title>
+   </head>
+   <body>
+     <h1>Stupid added</h1>
+     <p>Adder...<span id='op'>5+3=</span><span id="res"></span></p>
+      <p><a href="javascript:suma()">Add!</a></p>
+      <p id="another"><a href="javascript:document.location.reload()">Another one!</a></p>
+      <script type="text/javascript" charset="utf-8">
+       (function(){
+         var sentence = document.getElementById('op');
+         var other = []
+         other[0] = Math.floor(Math.random() * 9);
+         other[1] = Math.floor(Math.random() * 9);
+         sentence.innerHTML = other.join("+") + "=";
+       }());
+     </script>
+   </body>
+
+</html>
